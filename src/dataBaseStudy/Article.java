@@ -1,18 +1,18 @@
+package dataBaseStudy;
 
 public class Article {
 	private String title;
 	private String body;
-	public String getTitle() {
-		return title;
-	}
-	
 	
 	public Article(String title, String body) {
 		super();
 		this.title = title;
 		this.body = body;
 	}
-
+	
+	public String getTitle() {
+		return title;
+	}
 	public void setTitle(String title) {
 		this.title = title;
 	}
@@ -22,5 +22,6 @@ public class Article {
 	public void setBody(String body) {
 		this.body = body;
 	}
+	
 	
 }

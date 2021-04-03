@@ -10,30 +10,30 @@ public class DBTest {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
 //		JDBC 
-//		1. µå¶óÀÌ¹ö Ã£±â - Ã£Àº µå¶óÀÌ¹ö´Â 
+//		1. ë“œë¼ì´ë²„ ì°¾ê¸° - ì°¾ì€ ë“œë¼ì´ë²„ëŠ” 
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		
-//		2. DBMS¿¡ ¿¬°á
+//		2. DBMSì— ì—°ê²°
 		String url = "jdbc:mysql://localhost:3306/t1?serverTimezone=UTC";
 		String id = "sbsst"; // root
-		String pw = "sbs123414"; // °ø¹é
+		String pw = "sbs123414"; // ê³µë°±
 		
-		Connection conn = DriverManager.getConnection(url, id, pw); // ¿¬°á
+		Connection conn = DriverManager.getConnection(url, id, pw); // ì—°ê²°
 		
-//		3. sql ¹®À» ½ÇÇà
-//		3.1 ½ÇÇàÇÒ sql¹®
+//		3. sql ë¬¸ì„ ì‹¤í–‰
+//		3.1 ì‹¤í–‰í•  sqlë¬¸
 		String sql = "SELECT * FROM article";
 		
-//		3.2 ÀÛ¼ºµÈ sql¹®À» DBMS¿¡ Àü´Þ.
-//		Connection - ÆÀÀå, Statement - ½Ç¹«ÀÚ
-//		sqlÃ³¸® ½Ç¹«ÀÚ ÆÄ°ß
+//		3.2 ìž‘ì„±ëœ sqlë¬¸ì„ DBMSì— ì „ë‹¬.
+//		Connection - íŒ€ìž¥, Statement - ì‹¤ë¬´ìž
+//		sqlì²˜ë¦¬ ì‹¤ë¬´ìž íŒŒê²¬
 		
 		Statement stmt = conn.createStatement();
 		
-//		3.3 DBMS¿¡¼­ °¡Á®¿Â µ¥ÀÌÅÍ¸¦  ResultSetÀ¸·Î ´ã¾Æ¿È
-//		ResultSet Á¶È¸ °á°ú¹°(µ¥ÀÌÅÍ)À» ´ã´Â »óÀÚ
-//		stmt.executeQuery(sql); // Á¶È¸ °á°ú°¡ ÀÖ´Â °æ¿ì => select ¹®
-//		stmt.executeUpdate(sql); // Á¶È¸ °á°ú°¡ ¾øÀÌ DB¿¡¸¸ ¹Ý¿µ¸¸ ÇÏ´Â °æ¿ì =>insert, update, delete
+//		3.3 DBMSì—ì„œ ê°€ì ¸ì˜¨ ë°ì´í„°ë¥¼  ResultSetìœ¼ë¡œ ë‹´ì•„ì˜´
+//		ResultSet ì¡°íšŒ ê²°ê³¼ë¬¼(ë°ì´í„°)ì„ ë‹´ëŠ” ìƒìž
+//		stmt.executeQuery(sql); // ì¡°íšŒ ê²°ê³¼ê°€ ìžˆëŠ” ê²½ìš° => select ë¬¸
+//		stmt.executeUpdate(sql); // ì¡°íšŒ ê²°ê³¼ê°€ ì—†ì´ DBì—ë§Œ ë°˜ì˜ë§Œ í•˜ëŠ” ê²½ìš° =>insert, update, delete
 		
 		ResultSet rs =stmt.executeQuery(sql);
 	
